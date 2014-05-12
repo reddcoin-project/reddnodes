@@ -95,13 +95,13 @@ import time
 from cStringIO import StringIO
 from operator import itemgetter
 
-MAGIC_NUMBER = "\xF9\xBE\xB4\xD9"
-PROTOCOL_VERSION = 70001
+MAGIC_NUMBER = "\xfb\xc0\xb6\xdb"
+PROTOCOL_VERSION = 70003
 SERVICES = 1
-USER_AGENT = "/getaddr.bitnodes.io:0.1/"
-START_HEIGHT = 290000
+USER_AGENT = "/reddnodes:0.1/"
+START_HEIGHT = 140000
 RELAY = 1  # set to 1 to receive all txs
-DEFAULT_PORT = 8333
+DEFAULT_PORT = 45444
 
 SOCKET_BUFSIZE = 8192
 SOCKET_TIMEOUT = 15
@@ -479,7 +479,7 @@ class Connection(object):
 
 
 def main():
-    to_addr = ("148.251.238.178", 8333)
+    to_addr = ("188.226.135.184", 45444)
 
     handshake_msgs = []
     addr_msgs = []
@@ -502,9 +502,10 @@ def main():
     connection.close()
 
     print(handshake_msgs)
+    print(addr_msgs)
 
     return 0
 
 
 if __name__ == '__main__':
-    sys.exit(main())
+    main()

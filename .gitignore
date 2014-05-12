@@ -6,3 +6,4 @@ data/*
 geoip/*.dat
 rsync.sh
 test/*
+.idea
